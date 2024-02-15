@@ -43,7 +43,7 @@ class _LoginScreenState extends State<LoginScreen> {
           }, child: const Text("Login Now")),
           GestureDetector(
             onTap: () {
-               context.navigateToScreen(RegistrationScreen(),isReplace: true);
+               context.navigateToScreen(RegistrationScreen());
             },
             child: const Text("New User ? Create Account"),
           ),
@@ -56,7 +56,7 @@ class _LoginScreenState extends State<LoginScreen> {
   Future<void> loginUser() async {
     await FirebaseAuth.instance.signInWithEmailAndPassword(email: emailController.text, password: passwordController.text)
     .then((value){
-      context.navigateToScreen(AllChatScreen(),isReplace: true);
+      context.navigateToScreen(ChatScreen(),isReplace: true);
     });
   }
 }

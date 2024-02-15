@@ -110,7 +110,7 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
     FirebaseFirestore.instance.collection('users').add(user.toJson()).then(
       (value) {
         log('User created successfully');
-        context.navigateToScreen(const AllChatScreen(),isReplace : true);
+        context.navigateToScreen(const ChatScreen(),isReplace : true);
       },
     ).catchError((e) {
       log("Couldn't create user");
