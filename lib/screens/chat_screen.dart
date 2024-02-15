@@ -33,7 +33,21 @@ class _MyWidgetState extends State<ChatScreen> {
             width: double.infinity,
             height: 100,
             color : Colors.blue,
-            child: TextField(),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                SizedBox(
+                  width: context.getWidth(percentage: .8),
+                  child: TextField(
+                    decoration: InputDecoration(
+                      fillColor: Colors.white,
+                      filled: true
+
+                    ),
+                  )),
+                  IconButton(onPressed: (){}, icon: Icon(Icons.send))
+              ],
+            ),
           )
         ],
       )
